@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import axios from "axios";
 
-function AddTask() {
+function AddTask({ getTask }) {
   const [task, setTask] = useState("");
   const [date, setDate] = useState("");
   const handleSubmit = (e) => {
@@ -17,7 +17,10 @@ function AddTask() {
     const url = "https://63f7293b833c7c9c607dd928.mockapi.io/api/tasks";
     try {
       await axios.post(url, newTask);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
+    getTask();
   };
   return (
     <Form onSubmit={handleSubmit}>
