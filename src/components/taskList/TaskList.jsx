@@ -16,7 +16,10 @@ const TaskList = ({ task, getTask }) => {
       {task.map((item) => {
         const { id, task, date } = item;
         return (
-          <div>
+          <div
+            key={id}
+            className="mt-2 d-flex justify-content-between bg-warning rounded-2 p-2"
+          >
             <div>
               <h4>{task}</h4>
               <p>{date}</p>

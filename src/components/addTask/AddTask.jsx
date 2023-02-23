@@ -28,6 +28,7 @@ function AddTask({ getTask }) {
         <Form.Label>Task</Form.Label>
         <Form.Control
           type="text"
+          value={task}
           placeholder="Enter Task"
           onChange={(e) => setTask(e.target.value)}
         />
@@ -35,7 +36,11 @@ function AddTask({ getTask }) {
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Date</Form.Label>
-        <Form.Control type="date" onChange={(e) => setDate(e.target.value)} />
+        <Form.Control
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
       </Form.Group>
 
       <div className="text-center">
